@@ -1,0 +1,5 @@
+#!/bin/sh
+killall ruby
+killall indexer
+killall pcap2ap
+killall inotifywait

@@ -1,0 +1,5 @@
+#!/bin/bash
+export LC_ALL=en_US.UTF-8
+/root/pcap-search/pcap2ap -r /mnt/pcap &> /root/pcap-search/pcap2ap.log &
+/root/pcap-search/indexer -r /mnt/pcap &> /root/pcap-search/indexer.log &
+ruby /root/pcap-search/web/web.rb |tee -a /root/pcap-search/web.log
