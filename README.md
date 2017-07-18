@@ -11,5 +11,5 @@ docker build -t pcap-search .
 ## Run
 
 ```bash
-docker run -d -v /home/$YOURNAME/defcon/pcap:/mnt/pcap -p 4568:4568 --name "pcap0" pcap-saerch
+docker run -d -v /home/$YOURNAME/defcon/pcap:/mnt/pcap -p 4568:4568 --name "pcap0" pcap-search
 ```
