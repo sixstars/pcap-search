@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     npm \
     locales \
     psmisc \
-    zsh
+    zsh \
+    git
 
 RUN locale-gen en_US.UTF-8 && \
     pip install dpkt pypcap && \
@@ -23,7 +24,9 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
 COPY ./pcap-search /root/pcap-search/
 WORKDIR /root/pcap-search/web/
-RUN bower i --allow-root
+RUN bower i --allow-root && \
+    chmod +x /root/pcap-search/start && \
+    make -C /root/pcap-search/
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 VOLUME /mnt/pcap
