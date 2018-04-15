@@ -5,6 +5,7 @@ Deploy MaskRay/pcap-search in a docker container.
 ## Build
 ```bash
 mv Dockerfile ..
+cd ..
 docker build -t pcap-search .
 ```
 
