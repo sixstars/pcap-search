@@ -22,7 +22,7 @@ RUN locale-gen en_US.UTF-8 && \
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
-COPY ./pcap-search /root/pcap-search/
+COPY ./pcap-search-docker /root/pcap-search/
 WORKDIR /root/pcap-search/web/
 RUN bower i --allow-root && \
     chmod +x /root/pcap-search/start && \
